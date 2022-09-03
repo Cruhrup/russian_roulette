@@ -22,7 +22,7 @@ resource "aws_vpc" "omega" {
     cidr_block = "10.1.0.0/16"
     
     tags = {
-        "Name" = "main"
+        Name = "main"
     }
 }
 
@@ -31,7 +31,7 @@ resource "aws_subnet" "main" {
     cidr_block = "10.1.1.0/24"
 
     tags = {
-        "Name" = "main"
+        Name = "main"
     }
 }
 
@@ -50,12 +50,14 @@ resource "aws_security_group" "ssh_only" {
 }
 
 resource "aws_instance" "testme01" {
-    ami           = "ami-05fa00d4c63e32376"
-    instance_type = "t2.micro"
-    user_data     = file("init-script.sh")
-    vpc_security_group_ids = [aws_security_group.ssh_only.id]
+    ami                         = "ami-05fa00d4c63e32376"
+    instance_type               = "t2.micro"
+    user_data                   = file("init-script.sh")
+    associate_public_ip_address = true
+    vpc_security_group_ids      = [aws_security_group.ssh_only.id]
+    subnet_id                   = aws_subnet.main.id
 
     tags = {
-        "Name" = random_pet.name.id
+        Name = random_pet.name.id
     }
 }
