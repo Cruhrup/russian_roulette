@@ -8,7 +8,7 @@ terraform {
 
 provider "aws" {
     region  = "us-east-1"
-    profile = "terraform"
+    profile = "PROFILE_NAME_HERE"
 }
 
 provider "random" {}
@@ -84,7 +84,7 @@ resource "aws_security_group" "ssh_only" {
 
 resource "aws_key_pair" "ssh-key" {
     key_name   = "aws_ssh_key"
-    public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCudTcSat8rAzckBoORgs3kvbYghMNK4EtcEcGmWB07WXpDUNX5UPkfiumprEPCdZOWDIAco0CaCcHyIsmrLSKa2CahpwXihmwTrX4zOyqbPQBRvGlzKdtN8nQ1nDBVqVk7grj3Gbforqt1RNQcYoFE8aNHKuVc+EDo1sKR69W7JdUXz+rBIZl0q5Bkj3BYNXBTET1zL8+kMPBzdguzVh/UnIktKmFS9ZOapT9VwNNZ0M/OhjSqaGPox2eSw/+3yDTYeU3TmO+aCRsjNY6ZaNkvY5DpvO9MJf9Ue71hHqLBrtEWgCmLiQhXUUbyJfCHm8oB+bARcWf9j0XLL8nhbqz8c0urSn8hkH+mlsHBqkyntGSRCEIQWCfzA+8awFSyvYu08YBfOMwZx2YMWBsLOST5MUZNO/vSafFEgtizS4wXPPM0QCWYEmecbzbzfXOkXM6CWuecmoF6HcVHSSMLFrxmhN+zcUbWCAmZ4ORHFBdnPahzPmotsEBkHwt/o9GmDDr//Gz2jn6v/TjNcy2kMUzj0W+1aJNxgsYXZc0Z+O+OskVrMud6o6SP1uPXmTFLDhV3PFAOW6DuxC7IeXQnhlNlyMKIIqRe72NlABwug+6FXZdZXgbBZPeFgjAQMoGn9mluveJTUkeb4n7RFTmzI5Bwb9nVy+CmUkDIO8x8gj71Cw== guita@ELFASTOIII"
+    public_key = "MY_KEY.PUB HERE"
 }
 
 resource "aws_instance" "basic_ec2_instance" {
