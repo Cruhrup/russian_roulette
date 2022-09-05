@@ -33,5 +33,5 @@ Ideally, some script named feeling_lucky.py in the repository that can ask user 
 Multi-Cloud support? Maybe..
 
 favorite pet names:
-the-hideously-noble-grouse
-the-jolly-strong-silkworm
+> the-hideously-noble-grouse
+> the-jolly-strong-silkworm
